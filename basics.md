@@ -338,3 +338,108 @@ something(x,y,z)
 -- Defining function parameters:
 def something(x=0,y=0,z=0):
 
+# returning vavlues - 
+
+- Single return
+- Multiple return
+
+- Three things that can be returned in a python return:
+    - A literal
+        return 4
+
+    - A variable
+	  return h
+
+    - An expression
+	  return a + b 
+
+- Functions can also not return any value.
+- def somemthing():
+	print("something here")
+
+# Scope of variables
+- Global scope
+- Variables defined in the top level statement are called the global scope variables.
+- These variables can be accessed throughout the entire program.
+
+eg:
+
+x = 4
+y = 5
+z = int(input("Enter a value: "))
+a = x + y + z
+
+- Local scope
+- Variables that are defined inside a flow control statement and can only be accessed inside the statement itself.
+eg:
+if(condition):
+	s = "something"
+
+print(s) #this will give an error "variable not defined"
+
+- Scope of variables inside functions:
+- LEGB rule
+	- Local environment
+	- Enclosed environment
+	- Global environment
+	- Built-in environment
+
+- Local environment
+eg:
+def hi():
+	hey = "hi" #Local environment variable
+
+- Global environment
+eg:
+s = "hi jaanu"
+
+def hi():
+	print("hi" + s) #This will return an error
+
+- to solve this, we do:
+
+s = "hi jaanu"
+
+def hi(s):
+	print("hi" + s)
+
+-- OR --
+
+s = "hi jaanu"
+
+def hi():
+	global s #Global environment variable
+	print("hi" + s)
+
+- Enclosed environment
+eg: if(condition):
+	statements...
+
+eg: 
+if(a>b):
+	s = "something" #Enclosed environment variable
+
+- built-in environment
+- Any variables defined inside a builtin library or a external module are called built in environment variables.
+
+QUESTION:
+s = 15
+
+def something():
+    s = 10
+    print(s)
+
+something()
+print(s)
+
+#output:
+10
+15
+
+- Mutability and Immutability of variables in function and parameters
+
+- Mutable parameters:
+    - These parameter operations are performed on the same memory address
+
+- Immutable parameters:
+    - These parameter operations are performed on a copy of the created memory object
