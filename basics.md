@@ -480,3 +480,180 @@ print(s)
 
 - Immutable parameters:
     - These parameter operations are performed on a copy of the created memory object
+
+## TYPE LIBRARIES NOTES
+
+# File Handling
+
+- Types:
+    - Text file
+    - Binary file
+
+- Text file
+- Regular text files: .txt , .rtf, etc..
+- Delimited text files: a,b,c,etc... 
+    - delimiter: anything that separates 2 values in a file
+    - Types of delimited files:
+        - TSV (Tab Separated Values) - the data is separated by a "{TAB_SPACE}" 
+        - CSV (Comma Separated Values) - the data is separated by a , (comma)
+
+    eg: TSV file -
+    Jannu   Sudeshna    Chandana    so,on...
+
+    eg: CSV file - 
+    Jannu,Sudeshna,Chandana,so,on...
+
+- Binary file
+- are 0s and 1s
+- Python allows us to write and read in binary
+
+- Reading and Writing data in python
+
+- File system:
+    - Working directory
+    - Main directory (Hard drive/SSD/etc...)
+
+    eg: path: "I:\2023 v1.0\J_prep\J_prep"
+    working dir -> J_prep
+    main dir -> I:
+
+- Opening a file in python:
+    - `open()`
+    - format: {file_variable} = open({path_to_file})
+    eg:
+    file -> C:\Home\Desktop\keys.txt
+    variable = open("C:\Home\Desktop\keys.txt")
+    - this is an example of Object Oriented Programming (OOPs)
+    
+    variable = open("keys.txt")
+
+    - Absolute path: from main dir to working dir and file name included
+    - Relative path: only file name included
+
+
+- Opening modes:
+- Types of opening modes:
+    - read mode
+    - write mode
+    - readwrite mode
+    - read binary
+    - write binary
+    - readwrite binary
+    - append
+
+- Access modes:
+    1. read mode - only reads data from the file
+    open("file_name",'r')
+    r -> read mode
+
+    2. write mode - only writes data into the file
+    open("file_name",'w')
+    w -> write mode
+
+    3. Readwrite mode - can do both read and writing to the file
+    open("file_name",'r+')
+    r+ -> read permission + write permission
+
+    4. Read binary mode - only reads binary data.
+    open("file_name",'rb')
+    rb -> read in binary
+
+    5. Write binary mode - only writing binary data.
+    open("file_name",'wb')
+    wb -> write in binary
+
+    6. Readwrite binary - can do both reading and writing of binary files
+    open("file_name",'r+b')
+    r+b -> read permission + write permission in binary
+
+    7. append mode
+    open("file_name",'a')
+    a -> append data to the file
+    writes data onto a file
+        - a+ - read data from a file
+
+``` 
+eg:
+# to open a python file
+var = open("names.txt",'r')
+print(var)
+```
+
+- Closing opened files
+- done using the `.close()` function
+eg:
+var.close() -> close the var variable/file
+
+```
+eg:
+var = open("names.txt",'r')
+print(var)
+var.close()
+```
+
+- Reading data from files
+- Types:
+    - Read 
+    read()
+    format: {file_var}.read()
+
+    eg:
+    jannu hi this is python from a file
+    read() -> jannu hi this is python from a file
+    read(8) -> jannu hi
+
+    - Readline
+    readline()
+    format: {file_var}.readline()
+
+    eg:
+    jannu hi this is python from a file
+    readline() -> jannu hi this is python from a file
+
+    eg:
+    jannu hi this is python from a file
+    this is another line in the file
+    this is the third line
+    this is the last line, trust me
+
+    readline(2) ->  jannu hi this is python from a file\n <- EOL character (End Of Line)
+                    this is another line in the file\n
+
+    - Readlines
+    readlines()
+
+    This reads all the lines that are there in the file.
+
+- Write data to files
+- Types:
+    - Write
+    write()
+    format: {file_var}.write(strings)
+
+    eg:
+    write("hi there")
+    file -> hi there
+
+    - Writelines
+    writelines(["string 1","string 2"])
+    format: {file_var}.writelines([LIST OF STRING HERE])
+
+    eg:
+    writelines(["hi there jaanu","this is a list of strings"])
+    file -> hi there jaanu
+            this is a list of strings
+
+- Append data to files
+    same as write function but adds the data to the end of the file.
+
+- Flush function
+    this is used when there is a lot of data to be written at the same time.
+    this is to be used after completing all the write functions.
+    
+    {file_var}.flush()
+
+
+
+
+
+
